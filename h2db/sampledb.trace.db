@@ -1,0 +1,8 @@
+2019-11-13 23:18:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: ãƒ†ãƒ¼ãƒ–ãƒ« "STOCK" ã�Œè¦‹ã�¤ã�‹ã‚Šã�¾ã�›ã‚“
+Table "STOCK" not found; SQL statement:
+SELECT id, name,stockNum FROM Stock [42102-191]
+2019-11-13 23:19:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: ãƒ†ãƒ¼ãƒ–ãƒ« "STOCK" ã�Œè¦‹ã�¤ã�‹ã‚Šã�¾ã�›ã‚“
+Table "STOCK" not found; SQL statement:
+SELECT id, name,stockNum FROM Stock [42102-191]
