@@ -4,7 +4,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-@ApiModel(description = "在庫")
+@ApiModel(description = "商品情報一覧")
 @Data
 public class ProductListRes {
 
