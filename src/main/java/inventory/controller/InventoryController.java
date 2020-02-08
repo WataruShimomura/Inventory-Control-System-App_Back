@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import inventory.data.DeleteProductReq;
+import inventory.data.EntryProductReq;
 import inventory.data.ProductListRes;
 import inventory.data.UpdateProductReq;
 import inventory.service.DeleteProductReqService;
+import inventory.service.EntryProductReqService;
 import inventory.service.ProductListService;
 import inventory.service.UpDateProducService;
 import io.swagger.annotations.Api;
@@ -28,6 +30,8 @@ public class InventoryController {
 	private DeleteProductReqService deleteProductReqService;
 	@Autowired
 	private UpDateProducService upDateProducService;
+	@Autowired
+	private EntryProductReqService entryProductReqService;
 
 	@ApiOperation(value = "商品マスタ一覧取得", notes = "商品ID、商品名を取得する。")
 	@GetMapping("/getproducts")
@@ -36,14 +40,24 @@ public class InventoryController {
 	}
 
 	@ApiOperation(value = "商品情報消去", notes = "指定したIDの商品情報を消去します。")
-	@PostMapping("/deleteproducts")
+	@PostMapping("/deleteproduct")
 	public void delete(@RequestBody DeleteProductReq req) {
 		this.deleteProductReqService.deleteProductReq(req.getId());
 	}
 
 	@ApiOperation(value = "商品情報更新", notes = "指定したＩＤの商品情報を引数の値に更新します。")
-	@PostMapping("/update")
+	@PostMapping("/updateproduct")
 	public void upDate(@RequestBody UpdateProductReq req) {
 		this.upDateProducService.upDateProducService(req.getId(),req.getName());
+	}
+
+
+	@ApiOperation(value = "商品登録", notes = "商品の登録を行います。*IDは自動採番")
+	@PostMapping("/entryproduct")
+	//引数の@RequestBodyを除去、コンテンツタイプがapplication / x-www-form-urlencodedであるため
+	//Testの際はまたつける
+	public void entry(@RequestBody EntryProductReq req) {
+		String name = req.getName();
+		this.entryProductReqService.entryProductReq(name);
 	}
 }
