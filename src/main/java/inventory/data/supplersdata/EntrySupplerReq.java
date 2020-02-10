@@ -10,6 +10,7 @@ public class EntrySupplerReq {
 
 	@ApiModelProperty(value = "発送先名前", example = "鹿児島")
 	private String getSuppler_name;
+	@ApiModelProperty(value = "到着日数", example = "3")
 	private int order_reedtime;
 
 	public String getSuppler_name(){

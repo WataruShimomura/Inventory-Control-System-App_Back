@@ -53,8 +53,6 @@ public class SupplersController {
 
 	@ApiOperation(value = "発注先登録", notes = "発注先の登録を行います。*IDは自動採番")
 	@PostMapping("/entrysuppler")
-	//引数の@RequestBodyを除去、コンテンツタイプがapplication / x-www-form-urlencodedであるため
-	//Testの際はまたつける
 	public void entry(@RequestBody EntrySupplerReq req) {
 		this.entrySupplerReqService.entrySupplerReq(req.getSuppler_name(),req.getOrder_reedtime());
 	}

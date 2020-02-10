@@ -51,11 +51,8 @@ public class ProductsController {
 		this.upDateProducsService.upDateProducServiceReq(req.getId(),req.getName());
 	}
 
-
 	@ApiOperation(value = "商品登録", notes = "商品の登録を行います。*IDは自動採番")
 	@PostMapping("/entryproduct")
-	//引数の@RequestBodyを除去、コンテンツタイプがapplication / x-www-form-urlencodedであるため
-	//Testの際はまたつける
 	public void entry(@RequestBody EntryProductReq req) {
 		String name = req.getName();
 		this.entryProductReqService.entryProductReq(name);
