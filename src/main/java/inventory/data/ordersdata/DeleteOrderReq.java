@@ -9,8 +9,8 @@ import lombok.Data;
 public class DeleteOrderReq {
 
 	@ApiModelProperty(value = "order_Id", example = "1")
-	private int Order_Id;
+	private int order_Id;
 	public int getOrder_Id(){
-		return this.Order_Id;
+		return this.order_Id;
 	}
 }
