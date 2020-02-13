@@ -29,10 +29,10 @@ public class ArrivalListService {
 			String suppler_Name = arrivalMapper.getSupplerName(t.getSuppler_Id ());
 			res.setSuppler_Name(suppler_Name);
 
-			int order_Quantity = arrivalMapper.getOrderQuantity(t.getorder_Quantity ());
+			int order_Quantity = arrivalMapper.getOrderQuantityInOrders(t.getorder_Quantity ());
 			res.setOrder_Quantity(order_Quantity);
 
-			String arrival_Date = arrivalMapper.getArrivalDate(t.getArrival_Date ());
+			String arrival_Date = arrivalMapper.getArrivalDate(t.getProduct_Id ());
 			res.setArrival_Date(arrival_Date);
 			return res;
 		}).collect(Collectors.toList());
