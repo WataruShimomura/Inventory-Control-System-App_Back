@@ -46,13 +46,13 @@ public class StocksController {
 	}
 
 	@ApiOperation(value = "在庫消去", notes = "指定したIDの在庫を消去します。")
-	@PostMapping("/deletelocation")
+	@PostMapping("/deletestock")
 	public void delete(@RequestBody DeleteStockReq req) {
 		this.deleteStockReqService.deleteStockReq(req.getStock_Id());
 	}
 
 	@ApiOperation(value = "在庫情報更新", notes = "指定したＩＤの在庫情報を編集します。")
-	@PostMapping("/updatelocation")
+	@PostMapping("/updatestock")
 	public void upDate(@RequestBody UpdateStockReq req) {
 		this.upDateStockService.updateStockServiceReq(req.getStock_Id(),req.getStock_Num());
 	}
